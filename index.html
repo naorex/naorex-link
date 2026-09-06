@@ -1,14 +1,17 @@
 <!doctype html>
 <html lang="ja">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="naorex.link - 個人開発したWebツールや実験的なアプリをまとめるポータルサイトです。">
-  <title>naorex.link</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="naorex.link - 個人開発したWebツールや実験的なアプリをまとめるポータルサイトです。"
+    />
+    <title>naorex.link</title>
 
-  <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="./styles.css" />
 
-  <!--
+    <!--
     Google AdSense:
     AdSenseで発行されたコードを使う場合は、下記の ca-pub-XXXXXXXXXXXXXXXX を
     自分のPublisher IDに置き換えてコメントを解除してください。
@@ -17,103 +20,114 @@
       async
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
       crossorigin="anonymous"></script>
-  -->
-</head>
-<body>
-  <header class="site-header">
-    <div class="container">
-      <a class="brand" href="/">naorex.link</a>
-      <nav class="nav" aria-label="メインナビゲーション">
-        <a href="#apps">Apps</a>
-        <a href="/privacy.html">Privacy</a>
-        <a href="https://github.com/naorex" rel="me noopener noreferrer">GitHub</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="container hero-inner">
-        <p class="eyebrow">PERSONAL WEB TOOLS</p>
-        <h1>小さなWebツールを、<br>気軽に試せる場所。</h1>
-        <p class="hero-copy">
-          naorex.link は、個人開発したWebアプリや実験的なツールを公開するためのポータルです。
-        </p>
-      </div>
-    </section>
-
-    <section id="apps" class="section">
+  --></head>
+  <body>
+    <header class="site-header">
       <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">APPS</p>
-          <h2>公開中のアプリ</h2>
-        </div>
-
-        <div class="app-grid">
-          <article class="app-card">
-            <div>
-              <p class="app-meta">SIMULATION</p>
-              <h3>Luck Wealth Simulator</h3>
-              <p>
-                運の偏りと資産分布の広がりを、シミュレーションを通して眺めるWebアプリです。
-              </p>
-            </div>
-            <a
-              class="button"
-              href="https://luck-wealth-simulator.naorex.link/"
-              target="_blank"
-              rel="noopener noreferrer">
-              アプリを開く
-              <span aria-hidden="true">↗</span>
-            </a>
-          </article>
-
-          <article class="app-card muted-card">
-            <div>
-              <p class="app-meta">COMING SOON</p>
-              <h3>More tools</h3>
-              <p>
-                個人開発したツールを、今後ここに追加していきます。
-              </p>
-            </div>
-          </article>
-        </div>
+        <a class="brand" href="./">naorex.link</a>
+        <nav class="nav" aria-label="メインナビゲーション">
+          <a href="#apps">Apps</a>
+          <a href="./privacy.html">Privacy</a>
+          <a href="https://github.com/naorex" rel="me noopener noreferrer"
+            >GitHub</a
+          >
+        </nav>
       </div>
-    </section>
+    </header>
 
-    <section class="section about">
-      <div class="container about-grid">
-        <div>
-          <p class="eyebrow">ABOUT</p>
-          <h2>このサイトについて</h2>
-        </div>
-        <div class="about-copy">
-          <p>
-            個人で作った小さなWebアプリや技術的な実験を公開しています。
-            各アプリはそれぞれ独立したサブドメインで運用する場合があります。
-          </p>
-          <p>
-            ソースコードや開発内容に興味がある場合は
-            <a href="https://github.com/naorex" target="_blank" rel="noopener noreferrer">GitHub</a>
-            もどうぞ。
+    <main>
+      <section class="hero">
+        <div class="container hero-inner">
+          <p class="eyebrow">PERSONAL WEB TOOLS</p>
+          <h1>小さなWebツールを、<br />気軽に試せる場所。</h1>
+          <p class="hero-copy">
+            naorex.link
+            は、個人開発したWebアプリや実験的なツールを公開するためのポータルです。
           </p>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>&copy; <span id="year"></span> naorex.link</p>
-      <div class="footer-links">
-        <a href="/privacy.html">プライバシーポリシー</a>
-        <a href="https://github.com/naorex" target="_blank" rel="noopener noreferrer">GitHub</a>
-      </div>
-    </div>
-  </footer>
+      <section id="apps" class="section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">APPS</p>
+            <h2>公開中のアプリ</h2>
+          </div>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
+          <div class="app-grid">
+            <article class="app-card">
+              <div>
+                <p class="app-meta">SIMULATION</p>
+                <h3>Luck Wealth Simulator</h3>
+                <p>
+                  運の偏りと資産分布の広がりを、シミュレーションを通して眺めるWebアプリです。
+                </p>
+              </div>
+              <a
+                class="button"
+                href="https://luck-wealth-simulator.naorex.link/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                アプリを開く
+                <span aria-hidden="true">↗</span>
+              </a>
+            </article>
+
+            <article class="app-card muted-card">
+              <div>
+                <p class="app-meta">COMING SOON</p>
+                <h3>More tools</h3>
+                <p>個人開発したツールを、今後ここに追加していきます。</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section about">
+        <div class="container about-grid">
+          <div>
+            <p class="eyebrow">ABOUT</p>
+            <h2>このサイトについて</h2>
+          </div>
+          <div class="about-copy">
+            <p>
+              個人で作った小さなWebアプリや技術的な実験を公開しています。
+              各アプリはそれぞれ独立したサブドメインで運用する場合があります。
+            </p>
+            <p>
+              ソースコードや開発内容に興味がある場合は
+              <a
+                href="https://github.com/naorex"
+                target="_blank"
+                rel="noopener noreferrer"
+                >GitHub</a
+              >
+              もどうぞ。
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>&copy; <span id="year"></span> naorex.link</p>
+        <div class="footer-links">
+          <a href="./privacy.html">プライバシーポリシー</a>
+          <a
+            href="https://github.com/naorex"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>
