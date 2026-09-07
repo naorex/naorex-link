@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="naorex.link の目的、公開しているコンテンツ、運営方針について紹介します。"
+    />
+    <title>このサイトについて | naorex.link</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&amp;family=Newsreader:opsz,wght@6..72,700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="./">naorex.link</a>
+        <nav class="nav" aria-label="メインナビゲーション">
+          <a href="./">Home</a>
+          <a href="./#apps">Apps</a>
+          <a href="./about.html" aria-current="page">About</a>
+          <a href="./privacy.html">Privacy</a>
+          <a href="https://github.com/naorex" rel="me noopener noreferrer"
+            >GitHub</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main class="content-main">
+      <article class="container content-page long-document">
+        <header class="page-intro">
+          <p class="eyebrow">ABOUT NAOREX.LINK</p>
+          <h1>このサイトについて</h1>
+          <p class="page-lede">
+            naorex.link は、個人で開発した Web
+            ツールと技術的な実験を公開するためのサイトです。
+          </p>
+        </header>
+
+        <section class="content-section">
+          <h2>公開するもの</h2>
+          <p>
+            ブラウザ上で実際に操作できる独自の Web
+            アプリを中心に、技術検証や学習の過程で作ったコンテンツを公開しています。
+            完成した機能だけでなく、特定の仕組みや考え方を試せる小さな実験も扱います。
+          </p>
+          <p>
+            公開中のアプリは、それぞれ独立したサブドメインで提供する場合があります。
+            現在の公開内容は、トップページの<a href="./#apps">アプリ一覧</a>から確認できます。
+          </p>
+        </section>
+
+        <section class="content-section">
+          <h2>運営について</h2>
+          <p>
+            このサイトは、個人開発者の naorex が運営しています。
+            公開する情報は、アプリの目的や使い方、技術的な背景を理解するために必要な範囲に限ります。
+          </p>
+          <ul class="operating-principles">
+            <li>実際に動作を確認できるコンテンツを、分かりやすい説明とともに公開します。</li>
+            <li>技術検証や学習目的であること、適用範囲や注意点を必要に応じて明記します。</li>
+            <li>運営に不要な実名、住所などの個人情報は掲載しません。</li>
+          </ul>
+        </section>
+
+        <section class="content-section">
+          <h2>ソースコードと連絡先</h2>
+          <p>
+            ソースコードや開発内容は、公開可能なものから
+            <a
+              href="https://github.com/naorex"
+              target="_blank"
+              rel="noopener noreferrer me"
+              >GitHub プロフィール</a
+            >
+            で案内します。当サイトへの問い合わせや連絡も、GitHub
+            プロフィールに記載された連絡手段をご利用ください。
+          </p>
+        </section>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>&copy; <span id="year"></span> naorex.link</p>
+        <div class="footer-links">
+          <a href="./">Home</a>
+          <a href="./privacy.html">プライバシーポリシー</a>
+          <a
+            href="https://github.com/naorex"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

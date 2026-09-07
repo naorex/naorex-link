@@ -1,0 +1,13 @@
+{
+  "date": "2026-09-07",
+  "framework": "vanilla HTML and CSS",
+  "font_stack": "system UI stack",
+  "palette": "neutral paper with a green accent defined by CSS custom properties",
+  "motion": "no motion library; restrained CSS hover transitions",
+  "spacing": "existing hand-authored spacing",
+  "preserved": [
+    "site header and footer structure",
+    "green accent and neutral surfaces",
+    "static GitHub Pages architecture"
+  ]
+}

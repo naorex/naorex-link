@@ -8,13 +8,26 @@
 
 ```text
 .
+├── .hallmark/
+│   ├── log.json
+│   └── preflight.json
 ├── CNAME
+├── about.html
+├── apps/
+│   └── luck-wealth-simulator.html
+├── docs/
+│   └── history/
 ├── index.html
 ├── privacy.html
 ├── styles.css
+├── tokens.css
 ├── ads.txt
 └── README.md
 ```
+
+`about.html` はサイトの目的と運営方針、
+`apps/luck-wealth-simulator.html` は公開アプリの紹介を掲載します。
+配色、タイポグラフィ、余白などのデザイントークンは `tokens.css` で管理します。
 
 ## GitHub Pages
 
@@ -51,7 +64,7 @@ GitHub Pages側のHTTPS設定を確認するのが分かりやすいです。
 
 ### 1. AdSense script
 
-`index.html` と `privacy.html` の `<head>` に、
+`privacy.html` の `<head>` に、
 AdSense script のテンプレートをコメントで置いています。
 
 AdSenseで発行された実際のコードを使用し、
@@ -64,11 +77,8 @@ ca-pub-XXXXXXXXXXXXXXXX
 
 ### 2. ads.txt
 
-`ads.txt` は誤ったPublisher IDで公開しないよう、
-初期状態ではコメントのみになっています。
-
-AdSense管理画面の `Ads.txt スニペット` から表示された1行をコピーし、
-`ads.txt` に設定してください。
+`ads.txt` には AdSense 管理画面の `Ads.txt スニペット` を設定しています。
+Publisher ID を変更した場合は、AdSense 管理画面に表示される1行で更新してください。
 
 形式例:
 
@@ -92,6 +102,18 @@ Cookie、第三者配信広告、パーソナライズド広告、
 
 アクセス解析、問い合わせフォーム、ログイン機能などを追加した場合は、
 実際のデータ処理に合わせて更新してください。
+
+## About and app pages
+
+`about.html` には、サイトの目的、公開するコンテンツ、運営方針、
+GitHubを通じた連絡方法を記載しています。
+
+`apps/luck-wealth-simulator.html` は Luck Wealth Simulator の紹介ページです。
+公開中のアプリ本体は次のURLで提供します。
+
+```text
+https://luck-wealth-simulator.naorex.link/
+```
 
 ## Add another app
 
