@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Luck Wealth Simulator（運だけの村）の概要と、シミュレーションで確認できる内容を紹介します。"
+      content="Luck Wealth Simulator（運だけの村）の仕組み、操作パラメータ、結果指標、再分配の効果、モデルの限界を詳しく解説します。"
     />
-    <title>Luck Wealth Simulator | naorex.link</title>
+    <title>Luck Wealth Simulator の詳しい解説 | naorex.link</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -43,8 +43,9 @@
               <span class="detail-kicker">運だけの村 — 富の偏りシミュレーター</span>
             </h1>
             <p class="detail-summary">
-              全員が同じ資産と勝率から始めても、取引を重ねると富は偏っていく。
-              ヤードセール・モデルを条件を変えながら確かめられる、インタラクティブな教育用ツールです。
+              全員が同じ資産、同じルールから始めても、取引の順番と偶然が重なると富は偏ります。
+              このページでは、Simulator
+              が何を計算し、画面に出る数字をどう読めばよいかを、実際の動作に沿って説明します。
             </p>
             <div class="cta-row">
               <a
@@ -53,67 +54,294 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                シミュレーターを開く
+                Luck Wealth Simulator を試す
                 <span aria-hidden="true">↗</span>
               </a>
-              <a class="text-link" href="../about.html">サイトの運営方針を見る</a>
             </div>
           </div>
 
           <dl class="detail-facts">
             <div>
-              <dt>形式</dt>
-              <dd>ブラウザで動く Web アプリ</dd>
+              <dt>出発点</dt>
+              <dd>全員が同じ初期資産</dd>
             </div>
             <div>
-              <dt>モデル</dt>
-              <dd>ヤードセール・モデル</dd>
+              <dt>取引</dt>
+              <dd>毎ラウンド、無作為にペアを作る</dd>
             </div>
             <div>
-              <dt>用途</dt>
-              <dd>富の偏りを条件別に観察</dd>
+              <dt>観察対象</dt>
+              <dd>偶然と富の集中の関係</dd>
             </div>
           </dl>
         </header>
 
-        <section class="workflow" aria-labelledby="workflow-title">
-          <h2 id="workflow-title">試せること</h2>
-          <ol class="workflow-list">
-            <li class="workflow-step">
-              <span class="workflow-number" aria-hidden="true">01</span>
-              <div>
-                <h3>条件を決める</h3>
-                <p>
-                  村人の人数、初期資産、ラウンド数、賭け率、再分配率、勝率、乱数シードを調整できます。
-                  プリセットから条件を選ぶこともできます。
-                </p>
-              </div>
-            </li>
-            <li class="workflow-step">
-              <span class="workflow-number" aria-hidden="true">02</span>
-              <div>
-                <h3>取引を繰り返す</h3>
-                <p>
-                  無作為に組み合わせた参加者が取引を重ねます。同じシードと条件を使えば、同じ結果を再現できます。
-                </p>
-              </div>
-            </li>
-            <li class="workflow-step">
-              <span class="workflow-number" aria-hidden="true">03</span>
-              <div>
-                <h3>偏りを読み取る</h3>
-                <p>
-                  上位層の保有率、ジニ係数、中央値、順位別の取り分、最終資産の分布や個別の推移から、富の集中を複数の角度で確認できます。
-                </p>
-              </div>
-            </li>
+        <nav class="guide-index" aria-labelledby="guide-index-title">
+          <h2 id="guide-index-title">このページで分かること</h2>
+          <ol>
+            <li><a href="#overview">概要</a></li>
+            <li><a href="#parameters">操作パラメータ</a></li>
+            <li><a href="#results">結果の見方</a></li>
+            <li><a href="#why-unequal">偏りの理由</a></li>
+            <li><a href="#redistribution">再分配</a></li>
+            <li><a href="#limitations">モデルの限界</a></li>
+            <li><a href="#how-to-compare">試し方</a></li>
           </ol>
+        </nav>
+
+        <section id="overview" class="guide-section">
+          <h2>何を確かめる Simulator なのか？</h2>
+          <div class="guide-prose">
+            <p>
+              Luck Wealth Simulator
+              は、参加者全員が同じ初期資産を持つ「村」を用意し、参加者同士の確率的な取引を何度も繰り返す実験です。
+              初めから裕福な人や有利な能力を持つ人は設定されていません。
+            </p>
+            <p>
+              1ラウンドごとに村人の並びを無作為に入れ替え、2人ずつのペアを作ります。
+              各ペアでは決められた額を一方から他方へ移すため、村全体のお金は増減しません。
+              それでも結果を見ると、平均から大きく離れた人や、ほとんど資産を失う人が現れます。
+            </p>
+            <p>
+              このアプリの目的は、1回の勝敗ではなく、同じ勝率の取引を積み重ねたときに資産分布がどう変わるかを見ることです。
+              条件を一つずつ変え、上位層の取り分、中央値、ジニ係数などを比べられます。
+            </p>
+          </div>
         </section>
 
-        <p class="detail-note">
-          このシミュレーターは数理モデルを再現する教育用ツールです。
-          現実の格差の原因や、個人の資産形成を単独で説明するものではありません。
-        </p>
+        <section id="parameters" class="guide-section">
+          <h2>どの条件を変えられる？</h2>
+          <p class="section-lede">
+            入力欄とスライダーで条件を決め、「シミュレーション実行」を押すと結果が更新されます。
+            同じ条件で比較したいときは、変更する項目を一つに絞ると違いを追いやすくなります。
+          </p>
+
+          <dl class="parameter-list">
+            <div>
+              <dt>村人の人数</dt>
+              <dd>
+                <span class="parameter-range">10〜500人</span>
+                1ラウンドで全員が2人組になれるよう偶数単位で設定します。人数が多いほど、上位1%や10%が表す人数も変わります。
+              </dd>
+            </div>
+            <div>
+              <dt>1人の初期資産</dt>
+              <dd>
+                <span class="parameter-range">100〜10,000円</span>
+                全員が同じ金額から開始します。村全体の初期資産は「人数×1人の初期資産」です。
+              </dd>
+            </div>
+            <div>
+              <dt>ラウンド数</dt>
+              <dd>
+                <span class="parameter-range">10〜10,000回</span>
+                ペアを作り直して取引する回数です。回数を増やすと、一時的な勝敗ではなく積み重なった偏りを観察できます。
+              </dd>
+            </div>
+            <div>
+              <dt>賭け率</dt>
+              <dd>
+                <span class="parameter-range">1〜50%</span>
+                「少ない側の資産×賭け率」方式で、1回に移動する金額を決めます。率が高いほど、1回の勝敗が資産に与える影響が大きくなります。
+              </dd>
+            </div>
+            <div>
+              <dt>先手の勝率</dt>
+              <dd>
+                <span class="parameter-range">40〜60%</span>
+                無作為に並べたペアの先手側が勝つ確率です。毎ラウンドで組み合わせと順番を作り直すため、特定の村人に固定された能力差ではありません。
+              </dd>
+            </div>
+            <div>
+              <dt>毎回の再分配率</dt>
+              <dd>
+                <span class="parameter-range">0〜0.5%</span>
+                各ラウンドの取引後に、全員の現在資産から同じ割合を集め、人数で等分して戻します。小さな率でも毎回行われるため、長い実験では差が積み重なります。
+              </dd>
+            </div>
+            <div>
+              <dt>賭け金の方式</dt>
+              <dd>
+                「少ない側の資産×賭け率」と「毎回同じ固定額」を選べます。固定額方式でも、どちらかの手持ちを超える金額は賭けず、実際の賭け金は両者が支払える範囲に収まります。
+              </dd>
+            </div>
+            <div>
+              <dt>乱数シード</dt>
+              <dd>
+                <span class="parameter-range">1〜9,999</span>
+                ペアの順番と勝敗を生成する番号です。同じ条件とシードなら同じ結果を再現できます。シードだけを変えると、条件が同じでも起こり得る別の経路を比較できます。
+              </dd>
+            </div>
+          </dl>
+        </section>
+
+        <section id="results" class="guide-section">
+          <h2>結果の数字とグラフはどう読む？</h2>
+          <p class="section-lede">
+            一つの数字だけで結論を出さず、上位層、中央の人、分布全体を組み合わせて見るのがポイントです。
+          </p>
+
+          <div class="result-list">
+            <section class="result-item">
+              <h3>上位10%の保有率</h3>
+              <p>
+                最終資産の多い順に並べ、上位10%の人が村全体の資産を何%持つかを示します。富が一部へ集まるほど値が大きくなります。
+              </p>
+            </section>
+            <section class="result-item">
+              <h3>上位1%の保有率</h3>
+              <p>
+                最上位のごく少数へ、どれだけ資産が集中したかを見る指標です。100人設定なら最も資産の多い1人の取り分に当たります。
+              </p>
+            </section>
+            <section class="result-item">
+              <h3>ジニ係数</h3>
+              <p>
+                資産分布の不均等さを0から1に近い値で表します。0は全員が同額の状態で、1に近づくほど少数への集中が強い状態です。
+              </p>
+            </section>
+            <section class="result-item">
+              <h3>中央値の資産</h3>
+              <p>
+                資産順に並べた中央の人の金額です。このモデルでは村全体の資産が保たれるため平均は初期資産と同じですが、中央値は大きく下がることがあります。平均と中央値の差から、少数の大きな資産が平均を押し上げている様子を読めます。
+              </p>
+            </section>
+            <section class="result-item">
+              <h3>資産分布</h3>
+              <p>
+                「順位別の富の取り分」は、全員を資産順に10グループへ分けた保有割合です。「最終保有資産の分布」は、横軸を資産額、縦軸をその資産帯の人数として、中央値と平均の位置も示します。
+              </p>
+            </section>
+            <section class="result-item">
+              <h3>時系列推移</h3>
+              <p>
+                上位10%、上位1%、ジニ係数がラウンドとともにどう変化したかを表示します。最終値が同じでも、早い段階で集中したのか、上下しながら進んだのかを区別できます。
+              </p>
+            </section>
+            <section class="result-item">
+              <h3>個人ケース比較</h3>
+              <p>
+                同じ金額から始めた村人のうち、最終的に上位10%、中央値、最下層に位置した各1人の資産推移を比べます。最終順位だけでは見えない途中の回復や連敗を確認できます。
+              </p>
+            </section>
+          </div>
+        </section>
+
+        <section id="why-unequal" class="guide-section">
+          <h2>同じ勝率なのに、なぜ偏りが生じる？</h2>
+          <div class="guide-prose">
+            <p>
+              一番大きい理由は、勝敗の「回数」だけでなく「順番」が次の取引額を変えることです。
+              資産に対する割合で賭ける場合、1,000円が10%増えて1,100円になり、次に10%減ると990円です。
+              1勝1敗でも元の金額には戻りません。
+            </p>
+            <p>
+              Simulator
+              の標準方式では、2人のうち資産が少ない側を基準に賭け金を決めます。資産が少ない人には手持ちの一定割合を失う勝負ですが、資産が多い人にとって同じ金額は手持ちの一部にすぎません。
+              この違いが繰り返されると、少ない側は回復に必要な元手を失いやすく、多い側は負けを吸収しやすくなります。
+            </p>
+            <p>
+              誰が誰と当たり、どの時点で勝つかは乱数で決まります。早い段階の連勝は次の取引に使える資産を増やし、早い段階の連敗はその逆に働きます。
+              村全体のお金が消えたのではなく、多数が少しずつ失った分が少数へ移ることで、分布の片側が長く伸びます。
+            </p>
+            <p>
+              固定額方式では割合による掛け算の効果は弱まりますが、支払える金額が少ない人は残りの資産までしか賭けられません。
+              賭け金方式を切り替えると、同じ勝率でも偏りへ至る経路がどう違うかを比較できます。
+            </p>
+          </div>
+        </section>
+
+        <section id="redistribution" class="guide-section">
+          <h2>再分配を入れると何が変わる？</h2>
+          <div class="guide-prose">
+            <p>
+              再分配を有効にすると、各ラウンドの取引後に全員の現在資産から設定割合を集め、その合計を全員へ同額ずつ戻します。
+              資産が平均より多い人は拠出額が受取額を上回りやすく、平均より少ない人はその逆になるため、低い側の資産を下支えします。
+            </p>
+          </div>
+
+          <div class="redistribution-list">
+            <section>
+              <h3>再分配率 0%</h3>
+              <p>
+                取引以外の資産移動はありません。序盤の勝敗による差がそのまま次の賭け金へ反映され、偏りが蓄積する様子を観察できます。
+              </p>
+            </section>
+            <section>
+              <h3>小さな再分配 — 0.05%</h3>
+              <p>
+                アプリの「小さな再分配」プリセットの値です。1回ではわずかな移動でも毎ラウンド繰り返すため、長期では中央値や下位層の取り分を支え、集中の進行を緩める傾向を比較できます。
+              </p>
+            </section>
+            <section>
+              <h3>強めの再分配 — 0.15%</h3>
+              <p>
+                「再分配を強める」プリセットの値です。上位保有率やジニ係数を抑える方向に働きやすくなります。ただし取引の勝敗は続くため、全員が常に同額になるわけではありません。
+              </p>
+            </section>
+          </div>
+
+          <p class="guide-note">
+            再分配の効果は、ラウンド数、賭け率、賭け金方式、乱数シードとの組み合わせで変わります。同じシードのまま再分配率だけを変えると、違いを追いやすくなります。
+          </p>
+        </section>
+
+        <section id="limitations" class="guide-section">
+          <h2>このモデルでは何が言えない？</h2>
+          <div class="guide-prose">
+            <p>
+              Luck Wealth Simulator
+              は、確率的な取引と資産分布の関係だけを見やすく切り出した教育用モデルです。実社会そのものを再現するものではなく、現実の格差や個人の資産を単独で説明できません。
+            </p>
+          </div>
+
+          <ul class="limitations-list">
+            <li><strong>能力差と所得</strong> — 技能、労働時間、賃金、事業収入などは扱いません。</li>
+            <li><strong>教育と相続</strong> — 学習機会、家庭環境、贈与、世代をまたぐ資産移転は扱いません。</li>
+            <li><strong>税制と社会保障</strong> — 現実の累進課税、控除、年金、給付、公共サービスは再現していません。</li>
+            <li><strong>市場構造</strong> — 価格形成、企業、雇用、競争、規制、情報差は単純化されています。</li>
+            <li><strong>投資収益</strong> — 株式、債券、不動産などの収益、リスク、複利成長はモデルに含まれません。</li>
+            <li><strong>生産・消費・借金</strong> — 村全体の資産は取引で移るだけで、財の生産、生活費、信用取引はありません。</li>
+          </ul>
+
+          <p class="guide-note">
+            表示結果は投資判断や政策効果の予測には使えません。「同じ条件でも偶然の積み重ねで分布が変わる」という限定された問いを観察するためのものです。
+          </p>
+        </section>
+
+        <section id="how-to-compare" class="guide-section">
+          <h2>どう比べると違いが見えやすい？</h2>
+          <ol class="experiment-list">
+            <li>
+              <strong>まず初期設定で実行する。</strong>
+              上位保有率、ジニ係数、中央値を基準として控えます。
+            </li>
+            <li>
+              <strong>シードを固定して一項目だけ変える。</strong>
+              賭け率、ラウンド数、再分配率のどれが結果に効いたかを比較します。
+            </li>
+            <li>
+              <strong>最後にシードだけを変える。</strong>
+              同じ条件でも結果にどの程度のばらつきがあるかを確かめます。
+            </li>
+          </ol>
+
+          <aside class="final-cta" aria-label="Luck Wealth Simulator へのリンク">
+            <div>
+              <h3>条件を一つ変えて、結果を比べる。</h3>
+              <p>まずは同じシードで、再分配率を0%から変えてみてください。</p>
+            </div>
+            <a
+              class="button"
+              href="https://luck-wealth-simulator.naorex.link/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Luck Wealth Simulator を試す
+              <span aria-hidden="true">↗</span>
+            </a>
+          </aside>
+        </section>
       </article>
     </main>
 

@@ -26,7 +26,8 @@
 ```
 
 `about.html` はサイトの目的と運営方針、
-`apps/luck-wealth-simulator.html` は公開アプリの紹介を掲載します。
+`apps/luck-wealth-simulator.html` は公開アプリの仕組み、操作方法、
+結果指標、モデルの限界を説明する詳細解説を掲載します。
 配色、タイポグラフィ、余白などのデザイントークンは `tokens.css` で管理します。
 
 ## GitHub Pages
@@ -108,7 +109,9 @@ Cookie、第三者配信広告、パーソナライズド広告、
 `about.html` には、サイトの目的、公開するコンテンツ、運営方針、
 GitHubを通じた連絡方法を記載しています。
 
-`apps/luck-wealth-simulator.html` は Luck Wealth Simulator の紹介ページです。
+`apps/luck-wealth-simulator.html` は Luck Wealth Simulator の詳細解説ページです。
+操作できる条件、結果の読み方、富が偏る理由、再分配の働き、
+モデルが扱わない現実の要因を説明します。
 公開中のアプリ本体は次のURLで提供します。
 
 ```text
