@@ -19,6 +19,8 @@
 │   └── history/
 ├── index.html
 ├── privacy.html
+├── robots.txt
+├── sitemap.xml
 ├── styles.css
 ├── tokens.css
 ├── ads.txt
@@ -50,6 +52,21 @@ naorex.link
 を指定します。
 
 `CNAME` ファイルにも `naorex.link` を設定済みです。
+
+## Search engines
+
+`robots.txt` では、クローラーに公開ページのクロールを許可し、
+`sitemap.xml` の場所を案内しています。
+
+`sitemap.xml` には、現在公開しているページのURLだけを掲載します。
+公開ページを追加、移動、削除した場合は、サイトマップも同時に更新してください。
+
+公開後、次のURLで内容を直接確認できます。
+
+```text
+https://naorex.link/robots.txt
+https://naorex.link/sitemap.xml
+```
 
 ## Cloudflare DNS
 
