@@ -1,4 +1,4 @@
-/* Hallmark · macrostructure: Conversational FAQ · secondary: long-form guide · genre: editorial · tone: educational · theme: Garden · enrichment: none · nav: existing site header · footer: Ft2 · contrast: pass (40–41) · slop: pass (42–45) · honest: pass (46) · chrome: pass (47) · tokens: pass (48) · responsive: pass (49) · icons: pass (30) · mobile: pass (34, 49, 50–57) */
+/* Hallmark · macrostructure: Split Studio · secondary: long-form content · genre: editorial · tone: educational · theme: Garden · enrichment: none · nav: existing site header · footer: Ft2 · contrast: pass (40–41) · slop: pass (42–45) · honest: pass (46) · chrome: pass (47) · tokens: pass (48) · responsive: pass (49) · icons: pass (30) · mobile: pass (34, 49, 50–57) */
 /* Hallmark · pre-emit critique: P5 H5 E5 S5 R5 V4 */
 @import url("./tokens.css");
 
@@ -106,7 +106,15 @@ a[aria-disabled="true"] {
 }
 
 .hero-inner {
+  display: grid;
+  gap: var(--space-xl);
   max-width: var(--page-max);
+}
+
+.hero-heading,
+.app-intro,
+.app-proof {
+  min-width: 0;
 }
 
 .eyebrow,
@@ -128,9 +136,24 @@ a[aria-disabled="true"] {
   line-height: 1.02;
 }
 
+.portal-home .hero h1,
+.portal-home .app-card h2,
+.portal-home .app-proof h3,
+.portal-home .about h2 {
+  min-width: 0;
+  font-family: var(--font-display);
+  font-style: normal;
+  overflow-wrap: anywhere;
+}
+
+.portal-home .hero h1 {
+  max-width: 12ch;
+}
+
 .hero-copy {
   max-width: 65ch;
-  margin: var(--space-xl) 0 0;
+  margin: 0;
+  align-self: end;
   color: var(--color-muted);
   font-size: 1.08rem;
 }
@@ -154,14 +177,18 @@ a[aria-disabled="true"] {
 
 .app-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--space-md);
   margin-top: var(--space-xl);
 }
 
+.featured-app-section .app-grid {
+  margin-top: 0;
+}
+
 .app-card {
   display: flex;
-  min-height: 18rem;
+  min-height: 0;
   flex-direction: column;
   justify-content: space-between;
   gap: var(--space-xl);
@@ -177,7 +204,61 @@ a[aria-disabled="true"] {
   letter-spacing: -0.03em;
 }
 
+.app-card h2 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
 .app-card p {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.app-card .app-lede {
+  max-width: 46ch;
+  margin-top: var(--space-lg);
+  font-size: var(--text-md);
+  line-height: 1.65;
+}
+
+.app-intro .card-actions {
+  margin-top: var(--space-xl);
+}
+
+.app-proof {
+  padding-top: var(--space-xl);
+  border-top: var(--rule-hairline) solid var(--color-rule);
+}
+
+.app-proof h3 {
+  margin: 0;
+  font-size: var(--text-lg);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.app-facts {
+  margin: var(--space-lg) 0 0;
+  border-top: var(--rule-hairline) solid var(--color-rule);
+}
+
+.app-facts div {
+  display: grid;
+  gap: var(--space-2xs);
+  padding-block: var(--space-md);
+  border-bottom: var(--rule-hairline) solid var(--color-rule);
+}
+
+.app-facts dt {
+  color: var(--color-ink);
+  font-weight: 700;
+}
+
+.app-facts dd {
   margin: 0;
   color: var(--color-muted);
 }
@@ -293,6 +374,10 @@ a[aria-disabled="true"] {
   margin-top: var(--space-2xl);
   padding-top: var(--space-2xs);
   font-size: 1.45rem;
+}
+
+.policy h2[id] {
+  scroll-margin-top: calc(var(--header-height) + var(--space-lg));
 }
 
 .policy p {
@@ -629,6 +714,24 @@ a[aria-disabled="true"] {
 }
 
 @media (min-width: 48rem) {
+  .portal-home .hero-inner {
+    grid-template-columns: minmax(0, 7fr) minmax(18rem, 5fr);
+    align-items: end;
+    gap: var(--space-2xl);
+  }
+
+  .portal-home .app-card {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(18rem, 5fr);
+    align-items: start;
+    gap: var(--space-2xl);
+  }
+
+  .portal-home .app-proof {
+    padding: 0 0 0 var(--space-xl);
+    border-top: 0;
+  }
+
   .detail-hero {
     grid-template-columns: minmax(0, 7fr) minmax(16rem, 5fr);
     align-items: end;
@@ -704,7 +807,7 @@ a[aria-disabled="true"] {
   }
 
   .app-card {
-    min-height: 16rem;
+    min-height: 0;
     padding: var(--space-lg);
   }
 

@@ -82,16 +82,9 @@ GitHub Pages側のHTTPS設定を確認するのが分かりやすいです。
 
 ### 1. AdSense script
 
-`privacy.html` の `<head>` に、
-AdSense script のテンプレートをコメントで置いています。
-
-AdSenseで発行された実際のコードを使用し、
-
-```text
-ca-pub-XXXXXXXXXXXXXXXX
-```
-
-を自分のPublisher IDに置き換えてコメントを解除してください。
+`privacy.html` 自体にはAdSense広告コードを配置しません。
+公開中のLuck Wealth SimulatorではAdSenseタグを読み込んでいます。
+ポータル側のその他のページへ広告を追加する場合も、Privacyページは広告配信対象から外してください。
 
 ### 2. ads.txt
 
@@ -114,9 +107,13 @@ https://naorex.link/ads.txt
 
 ## Privacy policy
 
-`privacy.html` には、Google AdSenseを利用する場合を想定し、
-Cookie、第三者配信広告、パーソナライズド広告、
-アクセス情報などについて記載しています。
+`privacy.html` は、`naorex.link` と、Luck Wealth Simulatorなど
+当サイトが提供するサブドメイン上のWebアプリを対象にしています。
+現在および今後のGoogle AdSense利用、Cookie、Googleによるデータ利用、
+パーソナライズド広告、ホスティングや外部サービスによるアクセス情報について記載しています。
+
+問い合わせ先には外部フォームを使用します。公開URLが確定するまでは、
+PrivacyページにダミーURLを配置しません。
 
 アクセス解析、問い合わせフォーム、ログイン機能などを追加した場合は、
 実際のデータ処理に合わせて更新してください。
@@ -124,11 +121,13 @@ Cookie、第三者配信広告、パーソナライズド広告、
 ## About and app pages
 
 `about.html` には、サイトの目的、公開するコンテンツ、運営方針、
-GitHubを通じた連絡方法を記載しています。
+GitHubで公開する開発内容、Privacyページに掲載する問い合わせ先への案内を記載しています。
 
 `apps/luck-wealth-simulator.html` は Luck Wealth Simulator の詳細解説ページです。
 操作できる条件、結果の読み方、富が偏る理由、再分配の働き、
 モデルが扱わない現実の要因を説明します。
+トップページではこのアプリをFeatured Appとして紹介し、詳細解説を主導線、
+アプリ本体を副導線として案内します。
 公開中のアプリ本体は次のURLで提供します。
 
 ```text

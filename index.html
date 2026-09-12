@@ -9,9 +9,15 @@
     />
     <title>naorex.link</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&amp;family=Newsreader:opsz,wght@6..72,700&amp;display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body>
+  <body class="portal-home">
     <header class="site-header">
       <div class="container">
         <a class="brand" href="./">naorex.link</a>
@@ -29,48 +35,64 @@
     <main>
       <section class="hero">
         <div class="container hero-inner">
-          <p class="eyebrow">PERSONAL WEB TOOLS</p>
-          <h1>小さなWebツールを、<br />気軽に試せる場所。</h1>
+          <div class="hero-heading">
+            <h1>問いを、動かして確かめる。</h1>
+          </div>
           <p class="hero-copy">
-            naorex.link
-            は、個人開発したWebアプリや実験的なツールを公開するためのポータルです。
+            naorex.linkは、個人で作ったWebアプリを、仕組みや結果の読み方と
+            あわせて公開するサイトです。画面を操作するだけでなく、何を試せて、
+            どこまで分かるのかを一緒に読める形にしています。
           </p>
         </div>
       </section>
 
-      <section id="apps" class="section">
+      <section id="apps" class="section featured-app-section">
         <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">APPS</p>
-            <h2>公開中のアプリ</h2>
-          </div>
-
           <div class="app-grid">
             <article class="app-card">
-              <div>
-                <p class="app-meta">SIMULATION</p>
-                <h3>Luck Wealth Simulator</h3>
-                <p>
-                  運の偏りと資産分布の広がりを、シミュレーションを通して眺めるWebアプリです。
+              <div class="app-intro">
+                <p class="app-meta">FEATURED APP · SIMULATION</p>
+                <h2>Luck Wealth Simulator</h2>
+                <p class="app-lede">
+                  全員が同じ資産、同じ勝率から始めても、偶然の順番だけで富は偏っていきます。
+                  条件を一つずつ変え、その広がり方を比較できるシミュレーターです。
                 </p>
+                <div class="card-actions">
+                  <a
+                    class="button"
+                    href="./apps/luck-wealth-simulator.html"
+                  >
+                    詳しい解説を読む
+                    <span aria-hidden="true">→</span>
+                  </a>
+                  <a
+                    class="text-link"
+                    href="https://luck-wealth-simulator.naorex.link/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    アプリを開く
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
               </div>
-              <div class="card-actions">
-                <a
-                  class="button"
-                  href="./apps/luck-wealth-simulator.html"
-                >
-                  詳しい解説を読む
-                  <span aria-hidden="true">→</span>
-                </a>
-                <a
-                  class="text-link"
-                  href="https://luck-wealth-simulator.naorex.link/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  アプリを開く
-                  <span aria-hidden="true">↗</span>
-                </a>
+
+              <div class="app-proof">
+                <h3>このアプリで試せること</h3>
+                <dl class="app-facts">
+                  <div>
+                    <dt>条件を変える</dt>
+                    <dd>人数、ラウンド数、賭け率、勝率、再分配率を調整できます。</dd>
+                  </div>
+                  <div>
+                    <dt>同じ条件で比べる</dt>
+                    <dd>乱数シードを固定し、一つの条件だけを変えて比較できます。</dd>
+                  </div>
+                  <div>
+                    <dt>分布を観察する</dt>
+                    <dd>上位層の保有率、中央値、ジニ係数、資産分布を確認できます。</dd>
+                  </div>
+                </dl>
               </div>
             </article>
           </div>
@@ -80,13 +102,12 @@
       <section class="section about">
         <div class="container about-grid">
           <div>
-            <p class="eyebrow">ABOUT</p>
             <h2>このサイトについて</h2>
           </div>
           <div class="about-copy">
             <p>
-              個人で作った小さなWebアプリや技術的な実験を公開しています。
-              各アプリはそれぞれ独立したサブドメインで運用する場合があります。
+              個人で作ったWebアプリと、目的、使い方、仕組み、限界を理解するための
+              解説を公開しています。アプリ本体は独立したサブドメインで提供する場合があります。
             </p>
             <p>
               ソースコードや開発内容に興味がある場合は
