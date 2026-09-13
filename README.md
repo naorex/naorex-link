@@ -8,13 +8,29 @@
 
 ```text
 .
+├── .hallmark/
+│   ├── log.json
+│   └── preflight.json
 ├── CNAME
+├── about.html
+├── apps/
+│   └── luck-wealth-simulator.html
+├── docs/
+│   └── history/
 ├── index.html
 ├── privacy.html
+├── robots.txt
+├── sitemap.xml
 ├── styles.css
+├── tokens.css
 ├── ads.txt
 └── README.md
 ```
+
+`about.html` はサイトの目的と運営方針、
+`apps/luck-wealth-simulator.html` は公開アプリの仕組み、操作方法、
+結果指標、モデルの限界を説明する詳細解説を掲載します。
+配色、タイポグラフィ、余白などのデザイントークンは `tokens.css` で管理します。
 
 ## GitHub Pages
 
@@ -37,6 +53,21 @@ naorex.link
 
 `CNAME` ファイルにも `naorex.link` を設定済みです。
 
+## Search engines
+
+`robots.txt` では、クローラーに公開ページのクロールを許可し、
+`sitemap.xml` の場所を案内しています。
+
+`sitemap.xml` には、現在公開しているページのURLだけを掲載します。
+公開ページを追加、移動、削除した場合は、サイトマップも同時に更新してください。
+
+公開後、次のURLで内容を直接確認できます。
+
+```text
+https://naorex.link/robots.txt
+https://naorex.link/sitemap.xml
+```
+
 ## Cloudflare DNS
 
 Cloudflare側では `naorex.link` のDNSを管理し、
@@ -51,24 +82,14 @@ GitHub Pages側のHTTPS設定を確認するのが分かりやすいです。
 
 ### 1. AdSense script
 
-`index.html` と `privacy.html` の `<head>` に、
-AdSense script のテンプレートをコメントで置いています。
-
-AdSenseで発行された実際のコードを使用し、
-
-```text
-ca-pub-XXXXXXXXXXXXXXXX
-```
-
-を自分のPublisher IDに置き換えてコメントを解除してください。
+`privacy.html` 自体にはAdSense広告コードを配置しません。
+公開中のLuck Wealth SimulatorではAdSenseタグを読み込んでいます。
+ポータル側のその他のページへ広告を追加する場合も、Privacyページは広告配信対象から外してください。
 
 ### 2. ads.txt
 
-`ads.txt` は誤ったPublisher IDで公開しないよう、
-初期状態ではコメントのみになっています。
-
-AdSense管理画面の `Ads.txt スニペット` から表示された1行をコピーし、
-`ads.txt` に設定してください。
+`ads.txt` には AdSense 管理画面の `Ads.txt スニペット` を設定しています。
+Publisher ID を変更した場合は、AdSense 管理画面に表示される1行で更新してください。
 
 形式例:
 
@@ -86,12 +107,32 @@ https://naorex.link/ads.txt
 
 ## Privacy policy
 
-`privacy.html` には、Google AdSenseを利用する場合を想定し、
-Cookie、第三者配信広告、パーソナライズド広告、
-アクセス情報などについて記載しています。
+`privacy.html` は、`naorex.link` と、Luck Wealth Simulatorなど
+当サイトが提供するサブドメイン上のWebアプリを対象にしています。
+現在および今後のGoogle AdSense利用、Cookie、Googleによるデータ利用、
+パーソナライズド広告、ホスティングや外部サービスによるアクセス情報について記載しています。
+
+問い合わせ先には外部フォームを使用します。公開URLが確定するまでは、
+PrivacyページにダミーURLを配置しません。
 
 アクセス解析、問い合わせフォーム、ログイン機能などを追加した場合は、
 実際のデータ処理に合わせて更新してください。
+
+## About and app pages
+
+`about.html` には、サイトの目的、公開するコンテンツ、運営方針、
+GitHubで公開する開発内容、Privacyページに掲載する問い合わせ先への案内を記載しています。
+
+`apps/luck-wealth-simulator.html` は Luck Wealth Simulator の詳細解説ページです。
+操作できる条件、結果の読み方、富が偏る理由、再分配の働き、
+モデルが扱わない現実の要因を説明します。
+トップページではこのアプリをFeatured Appとして紹介し、詳細解説を主導線、
+アプリ本体を副導線として案内します。
+公開中のアプリ本体は次のURLで提供します。
+
+```text
+https://luck-wealth-simulator.naorex.link/
+```
 
 ## Add another app
 
