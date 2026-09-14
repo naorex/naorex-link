@@ -13,6 +13,7 @@
 │   └── preflight.json
 ├── CNAME
 ├── about.html
+├── blog.html
 ├── apps/
 │   └── luck-wealth-simulator.html
 ├── docs/
@@ -27,9 +28,8 @@
 └── README.md
 ```
 
-`about.html` はサイトの目的と運営方針、
-`apps/luck-wealth-simulator.html` は公開アプリの仕組み、操作方法、
-結果指標、モデルの限界を説明する詳細解説を掲載します。
+`about.html` はサイトの目的と運営方針、`blog.html` は `blog.naorex.link` の位置づけと案内、
+`apps/luck-wealth-simulator.html` は公開アプリの仕組み、操作方法、結果指標、モデルの限界を説明します。
 配色、タイポグラフィ、余白などのデザイントークンは `tokens.css` で管理します。
 
 ## GitHub Pages
@@ -53,10 +53,30 @@ naorex.link
 
 `CNAME` ファイルにも `naorex.link` を設定済みです。
 
+## Blog
+
+技術ブログは次のサブドメインで公開します。
+
+```text
+https://blog.naorex.link/
+```
+
+ポータルのトップページからブログ紹介ページ `blog.html` とブログ本体へリンクします。
+`blog.html` では、ブログの位置づけ、扱うテーマ、ポータルとの関係を説明します。
+
+相互リンクにするため、ブログ側のヘッダー、ナビゲーション、サイドバー、フッターなどの分かりやすい場所にも
+次のポータルへのリンクを追加してください。
+
+```text
+https://naorex.link/
+```
+
+ブログがBloggerなど別サービスで管理されている場合、このリポジトリからブログ側のテンプレートは更新しません。
+ブログサービス側のレイアウトまたはテーマ設定でリンクを追加します。
+
 ## Search engines
 
-`robots.txt` では、クローラーに公開ページのクロールを許可し、
-`sitemap.xml` の場所を案内しています。
+`robots.txt` では、クローラーに公開ページのクロールを許可し、`sitemap.xml` の場所を案内しています。
 
 `sitemap.xml` には、現在公開しているページのURLだけを掲載します。
 公開ページを追加、移動、削除した場合は、サイトマップも同時に更新してください。
@@ -70,13 +90,11 @@ https://naorex.link/sitemap.xml
 
 ## Cloudflare DNS
 
-Cloudflare側では `naorex.link` のDNSを管理し、
-apex (`@`) をGitHub Pagesへ向けます。
+Cloudflare側では `naorex.link` のDNSを管理し、apex (`@`) をGitHub Pagesへ向けます。
 
 GitHub Pagesが案内する最新のDNS設定値を確認したうえで設定してください。
 
-CloudflareのProxy設定については、最初は `DNS only` で
-GitHub Pages側のHTTPS設定を確認するのが分かりやすいです。
+CloudflareのProxy設定については、最初は `DNS only` でGitHub Pages側のHTTPS設定を確認するのが分かりやすいです。
 
 ## Google AdSense
 
@@ -107,27 +125,20 @@ https://naorex.link/ads.txt
 
 ## Privacy policy
 
-`privacy.html` は、`naorex.link` と、Luck Wealth Simulatorなど
-当サイトが提供するサブドメイン上のWebアプリを対象にしています。
-現在および今後のGoogle AdSense利用、Cookie、Googleによるデータ利用、
-パーソナライズド広告、ホスティングや外部サービスによるアクセス情報について記載しています。
+`privacy.html` は、`naorex.link` と、Luck Wealth Simulatorなど当サイトが提供するサブドメイン上のWebアプリを対象にしています。
+現在および今後のGoogle AdSense利用、Cookie、Googleによるデータ利用、パーソナライズド広告、ホスティングや外部サービスによるアクセス情報について記載しています。
 
-問い合わせ先には外部フォームを使用します。公開URLが確定するまでは、
-PrivacyページにダミーURLを配置しません。
+問い合わせ先には外部フォームを使用します。公開URLが確定するまでは、PrivacyページにダミーURLを配置しません。
 
-アクセス解析、問い合わせフォーム、ログイン機能などを追加した場合は、
-実際のデータ処理に合わせて更新してください。
+アクセス解析、問い合わせフォーム、ログイン機能などを追加した場合は、実際のデータ処理に合わせて更新してください。
 
 ## About and app pages
 
-`about.html` には、サイトの目的、公開するコンテンツ、運営方針、
-GitHubで公開する開発内容、Privacyページに掲載する問い合わせ先への案内を記載しています。
+`about.html` には、サイトの目的、公開するコンテンツ、運営方針、GitHubで公開する開発内容、ブログ、Privacyページに掲載する問い合わせ先への案内を記載しています。
 
 `apps/luck-wealth-simulator.html` は Luck Wealth Simulator の詳細解説ページです。
-操作できる条件、結果の読み方、富が偏る理由、再分配の働き、
-モデルが扱わない現実の要因を説明します。
-トップページではこのアプリをFeatured Appとして紹介し、詳細解説を主導線、
-アプリ本体を副導線として案内します。
+操作できる条件、結果の読み方、富が偏る理由、再分配の働き、モデルが扱わない現実の要因を説明します。
+トップページではこのアプリをFeatured Appとして紹介し、詳細解説を主導線、アプリ本体を副導線として案内します。
 公開中のアプリ本体は次のURLで提供します。
 
 ```text
@@ -136,8 +147,7 @@ https://luck-wealth-simulator.naorex.link/
 
 ## Add another app
 
-`index.html` の `.app-grid` 内に `article.app-card` を追加すれば、
-新しいWebアプリをポータルへ追加できます。
+`index.html` の `.app-grid` 内に `article.app-card` を追加すれば、新しいWebアプリをポータルへ追加できます。
 
 例:
 

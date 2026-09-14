@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="naorex.link - 個人開発したWebツールや実験的なアプリをまとめるポータルサイトです。"
+      content="naorex.link - 個人開発したWebツールや実験的なアプリ、技術ブログをまとめるポータルサイトです。"
     />
     <title>naorex.link</title>
 
@@ -23,6 +23,7 @@
         <a class="brand" href="./">naorex.link</a>
         <nav class="nav" aria-label="メインナビゲーション">
           <a href="#apps">Apps</a>
+          <a href="./blog.html">Blog</a>
           <a href="./about.html">About</a>
           <a href="./privacy.html">Privacy</a>
           <a href="https://github.com/naorex" rel="me noopener noreferrer"
@@ -99,6 +100,56 @@
         </div>
       </section>
 
+      <section id="blog" class="section featured-app-section">
+        <div class="container">
+          <div class="app-grid">
+            <article class="app-card">
+              <div class="app-intro">
+                <p class="app-meta">BLOG · DEVELOPMENT NOTES</p>
+                <h2>blog.naorex.link</h2>
+                <p class="app-lede">
+                  個人開発、技術検証、学習の過程で得た知見や試行錯誤を、文章として残すブログです。
+                  ポータルで公開しているアプリの背景や、実装・運用で考えたことも扱います。
+                </p>
+                <div class="card-actions">
+                  <a class="button" href="./blog.html">
+                    ブログについて
+                    <span aria-hidden="true">→</span>
+                  </a>
+                  <a
+                    class="text-link"
+                    href="https://blog.naorex.link/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    ブログを読む
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="app-proof">
+                <h3>ブログで扱うこと</h3>
+                <dl class="app-facts">
+                  <div>
+                    <dt>個人開発</dt>
+                    <dd>作ったものの背景、設計、実装で得た知見を記録します。</dd>
+                  </div>
+                  <div>
+                    <dt>技術検証</dt>
+                    <dd>新しい技術やツールを試した結果と、そこで分かったことを整理します。</dd>
+                  </div>
+                  <div>
+                    <dt>学習と運用</dt>
+                    <dd>学び直しや運用時の試行錯誤を、後から参照できる形で残します。</dd>
+                  </div>
+                </dl>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section class="section about">
         <div class="container about-grid">
           <div>
@@ -108,6 +159,16 @@
             <p>
               個人で作ったWebアプリと、目的、使い方、仕組み、限界を理解するための
               解説を公開しています。アプリ本体は独立したサブドメインで提供する場合があります。
+            </p>
+            <p>
+              開発や技術検証の過程は
+              <a href="./blog.html">ブログ紹介ページ</a>と
+              <a
+                href="https://blog.naorex.link/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >blog.naorex.link</a>
+              でも公開しています。
             </p>
             <p>
               ソースコードや開発内容に興味がある場合は
@@ -133,6 +194,7 @@
       <div class="container footer-inner">
         <p>&copy; <span id="year"></span> naorex.link</p>
         <div class="footer-links">
+          <a href="./blog.html">Blog</a>
           <a href="./about.html">このサイトについて</a>
           <a href="./privacy.html">プライバシーポリシー</a>
           <a
