@@ -129,9 +129,16 @@ https://naorex.link/ads.txt
 `privacy.html` は、`naorex.link` と、Luck Wealth Simulatorなど当サイトが提供するサブドメイン上のWebアプリを対象にしています。
 現在および今後のGoogle AdSense利用、Cookie、Googleによるデータ利用、パーソナライズド広告、ホスティングや外部サービスによるアクセス情報について記載しています。
 
-問い合わせ先には外部フォームを使用します。公開URLが確定するまでは、PrivacyページにダミーURLを配置しません。
+問い合わせ先には、次のGoogleフォームを使用します。
 
-アクセス解析、問い合わせフォーム、ログイン機能などを追加した場合は、実際のデータ処理に合わせて更新してください。
+```text
+https://forms.gle/AsNeetvYUisTbYwm9
+```
+
+サイト内では、各ページのフッターとAboutページから `privacy.html#contact` へ案内し、
+Privacyページでフォームの提供元と入力情報の利用目的を説明したうえで外部フォームを開きます。
+
+アクセス解析、問い合わせフォームの入力項目や利用目的、ログイン機能などを変更した場合は、実際のデータ処理に合わせて更新してください。
 
 ## About and app pages
 
