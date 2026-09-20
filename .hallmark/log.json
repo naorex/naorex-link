@@ -1,6 +1,14 @@
 [
   {
     "date": "2026-09-20",
+    "scope": "app",
+    "macrostructure": "Split Studio / Guide shell / Long Document",
+    "theme": "Garden",
+    "enrichment": "existing real product capture only",
+    "brief": "Unified editorial design system across all six naorex.link pages"
+  },
+  {
+    "date": "2026-09-20",
     "macrostructure": "Workbench",
     "theme": "Garden",
     "enrichment": "real product capture",

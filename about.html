@@ -12,17 +12,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&amp;family=Newsreader:opsz,wght@6..72,700&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&amp;family=Noto+Serif+JP:wght@700&amp;display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body>
+  <body class="content-site-page about-page">
     <header class="site-header">
       <div class="container">
         <a class="brand" href="./">naorex.link</a>
         <nav class="nav" aria-label="メインナビゲーション">
-          <a href="./">Home</a>
           <a href="./#apps">Apps</a>
           <a href="./blog.html">Blog</a>
           <a href="./about.html" aria-current="page">About</a>
@@ -36,7 +35,7 @@
       <article class="container content-page long-document">
         <header class="page-intro">
           <p class="eyebrow">ABOUT NAOREX.LINK</p>
-          <h1>このサイトについて</h1>
+          <h1>このサイトに<br class="mobile-break" />ついて</h1>
           <p class="page-lede">
             naorex.link は、個人で開発した Web ツールや実験と、個人ブログを案内するポータルサイトです。
           </p>
@@ -94,12 +93,15 @@
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <p>&copy; <span id="year"></span> naorex.link</p>
+        <div class="footer-signature">
+          <a class="footer-brand" href="./">naorex.link</a>
+          <p class="footer-copyright">&copy; <span id="year"></span> naorex.link</p>
+        </div>
         <div class="footer-links">
-          <a href="./">Home</a>
           <a href="./blog.html">Blog</a>
+          <a href="./about.html">About</a>
           <a href="./privacy.html#contact">お問い合わせ</a>
-          <a href="./privacy.html">プライバシーポリシー</a>
+          <a href="./privacy.html">Privacy</a>
           <a
             href="https://github.com/naorex"
             target="_blank"

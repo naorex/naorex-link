@@ -1,21 +1,25 @@
-/* Hallmark · theme: Garden · light paper · roman serif · leaf-green accent */
+/* Hallmark · theme: Garden · design-system: design.md · light paper · Japanese serif/sans pairing */
 :root {
   --color-paper: oklch(97.5% 0.004 115);
-  --color-paper-raised: oklch(99% 0.003 115);
+  --color-paper-2: oklch(99% 0.003 115);
+  --color-paper-3: oklch(94.5% 0.008 115);
+  --color-paper-raised: var(--color-paper-2);
   --color-ink: oklch(20% 0.008 150);
-  --color-body: oklch(31% 0.009 150);
+  --color-ink-2: oklch(31% 0.009 150);
+  --color-body: var(--color-ink-2);
   --color-muted: oklch(49% 0.012 150);
+  --color-neutral: oklch(38% 0.011 150);
   --color-rule: oklch(88% 0.01 115);
+  --color-rule-2: oklch(72% 0.014 120);
   --color-accent: oklch(43% 0.09 158);
   --color-accent-hover: oklch(35% 0.075 158);
   --color-accent-ink: oklch(98% 0.004 115);
   --color-focus: oklch(55% 0.13 158);
 
-  --font-display: "Newsreader", "Yu Mincho", "Hiragino Mincho ProN", serif;
-  --font-body: "IBM Plex Sans", "Noto Sans JP", "Yu Gothic", sans-serif;
-  --font-site:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans",
-    "Noto Sans JP", "Yu Gothic", sans-serif;
+  --font-display: "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", serif;
+  --font-body: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif;
+  --font-site: var(--font-body);
+  --font-wordmark: var(--font-display);
 
   --space-3xs: 0.125rem;
   --space-2xs: 0.25rem;
@@ -28,17 +32,18 @@
   --space-3xl: 6rem;
   --space-4xl: 9rem;
 
-  --text-xs: 0.72rem;
-  --text-sm: 0.84rem;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
   --text-base: 1rem;
-  --text-md: 1.25rem;
-  --text-lg: 1.5625rem;
-  --text-xl: 1.9531rem;
-  --text-2xl: 2.4414rem;
-  --text-3xl: 3.0518rem;
-  --text-4xl: 3.8147rem;
-  --text-display: clamp(2.75rem, 5vw + 1rem, 5.25rem);
-  --text-display-small: clamp(2.35rem, 3.5vw + 1rem, 4.25rem);
+  --text-md: 1.125rem;
+  --text-lg: 1.375rem;
+  --text-xl: 1.75rem;
+  --text-2xl: 2.25rem;
+  --text-3xl: 3rem;
+  --text-4xl: 3.75rem;
+  --text-display: clamp(3rem, 7vw, 5.25rem);
+  --text-display-small: clamp(2.35rem, 4vw + 1rem, 4rem);
+  --text-portal: clamp(2rem, 5vw, 3.75rem);
 
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
@@ -47,11 +52,23 @@
   --dur-short: 220ms;
   --dur-long: 420ms;
 
-  --rule-hairline: 1px;
-  --radius-sm: 0.75rem;
-  --radius-md: 1.125rem;
+  --rule-hair: 1px;
+  --rule-fine: 2px;
+  --rule-hairline: var(--rule-hair);
+  --radius-card: 1rem;
+  --radius-pill: 999px;
+  --radius-input: 0.75rem;
+  --radius-sm: var(--radius-input);
+  --radius-md: var(--radius-card);
+
   --page-max: 65rem;
   --reading-max: 45rem;
-  --header-height: 4.25rem;
+  --header-height: 7.75rem;
+  --z-base: 1;
+  --z-raised: 10;
+  --z-dropdown: 100;
   --z-sticky: 200;
+  --z-modal: 400;
+  --z-toast: 500;
+  --z-tooltip: 600;
 }

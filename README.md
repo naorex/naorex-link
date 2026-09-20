@@ -21,6 +21,7 @@
 │   └── luck-wealth-simulator.html
 ├── docs/
 │   └── history/
+├── design.md
 ├── index.html
 ├── privacy.html
 ├── robots.txt
@@ -34,7 +35,21 @@
 `about.html` はサイトの目的と運営方針、`blog.html` は `blog.naorex.link` の位置づけと案内、
 `apps/japan-tide-navi.html` は潮位なびの地点選択、表示の読み方、目標潮位、データの注意点を、
 `apps/luck-wealth-simulator.html` は公開アプリの仕組み、操作方法、結果指標、モデルの限界を説明します。
-配色、タイポグラフィ、余白などのデザイントークンは `tokens.css` で管理します。
+サイト全体のデザイン方針は `design.md`、配色、タイポグラフィ、余白などの実装用トークンは
+`tokens.css` で管理します。
+
+## Visual design system
+
+全ページは、静かな編集誌を意識したEditorial／Gardenのデザインシステムを共有します。
+
+- 見出しとワードマーク: Noto Serif JP 700
+- 本文、ナビゲーション、ボタン: Noto Sans JP 400／700
+- 共通ヘッダー: 中央ワードマーク、`Apps / Blog / About / Privacy / GitHub` の順のナビゲーション、二重罫線
+- 共通フッター: ワードマーク、著作権、Blog、About、お問い合わせ、Privacy、GitHub
+- 主導線: 深緑のボタン、副導線: 下線付きテキストリンク
+
+新しいページやコンポーネントを追加するときは、個別の色や書体を定義せず、先に
+`design.md` のページ種別と許容範囲を確認し、`tokens.css` の既存トークンを使用してください。
 
 ## GitHub Pages
 
