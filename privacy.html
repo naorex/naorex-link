@@ -9,15 +9,21 @@
     />
     <title>プライバシーポリシー | naorex.link</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&amp;family=Noto+Serif+JP:wght@700&amp;display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body>
+  <body class="content-site-page privacy-page">
     <header class="site-header">
       <div class="container">
         <a class="brand" href="./">naorex.link</a>
         <nav class="nav" aria-label="メインナビゲーション">
-          <a href="./">Home</a>
           <a href="./#apps">Apps</a>
+          <a href="./blog.html">Blog</a>
           <a href="./about.html">About</a>
           <a href="./privacy.html" aria-current="page">Privacy</a>
           <a href="https://github.com/naorex" rel="me noopener noreferrer"
@@ -30,7 +36,7 @@
     <main class="policy-main">
       <article class="container policy">
         <p class="eyebrow">PRIVACY POLICY</p>
-        <h1>プライバシーポリシー</h1>
+        <h1>プライバシー<br class="mobile-break" />ポリシー</h1>
         <p class="policy-updated">最終更新日: 2026年9月20日</p>
 
         <p>
@@ -169,11 +175,15 @@
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <p>&copy; <span id="year"></span> naorex.link</p>
+        <div class="footer-signature">
+          <a class="footer-brand" href="./">naorex.link</a>
+          <p class="footer-copyright">&copy; <span id="year"></span> naorex.link</p>
+        </div>
         <div class="footer-links">
-          <a href="./">Home</a>
-          <a href="./about.html">このサイトについて</a>
+          <a href="./blog.html">Blog</a>
+          <a href="./about.html">About</a>
           <a href="./privacy.html#contact">お問い合わせ</a>
+          <a href="./privacy.html">Privacy</a>
           <a
             href="https://github.com/naorex"
             target="_blank"
