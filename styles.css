@@ -95,7 +95,7 @@ a[aria-disabled="true"] {
 .nav a:hover,
 .footer-links a:hover,
 .about-copy a:hover,
-.policy a:hover,
+.policy a:not(.button):hover,
 .content-page a:hover,
 .text-link:hover {
   color: var(--color-accent);
@@ -384,7 +384,7 @@ a[aria-disabled="true"] {
   color: var(--color-body);
 }
 
-.policy a {
+.policy a:not(.button) {
   color: var(--color-accent);
   text-underline-offset: 2px;
 }
@@ -1242,7 +1242,7 @@ h3,
   .footer-links a:hover,
   .footer-brand:hover,
   .about-copy a:hover,
-  .policy a:hover,
+  .policy a:not(.button):hover,
   .content-page a:hover,
   .text-link:hover {
     color: var(--color-accent);
