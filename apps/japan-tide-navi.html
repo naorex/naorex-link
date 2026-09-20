@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="潮位なびで観測地点を選び、今日の潮位グラフ、満潮・干潮、時間帯別の変化、目標潮位を確認する方法とデータの注意点を紹介します。"
+    />
+    <title>潮位なびの紹介と使い方 | naorex.link</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&amp;family=Newsreader:opsz,wght@6..72,700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="../">naorex.link</a>
+        <nav class="nav" aria-label="メインナビゲーション">
+          <a href="../">Home</a>
+          <a href="../#apps" aria-current="page">Apps</a>
+          <a href="../about.html">About</a>
+          <a href="../privacy.html">Privacy</a>
+          <a href="https://github.com/naorex" rel="me noopener noreferrer"
+            >GitHub</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main class="content-main">
+      <article class="container content-page detail-page tide-guide">
+        <header class="detail-hero">
+          <div>
+            <p class="eyebrow">DAILY TIDE TOOL</p>
+            <h1>
+              潮位なび
+              <span class="detail-kicker">今日の潮位を、地点から読む</span>
+            </h1>
+            <p class="detail-summary">
+              日本各地の観測地点を選び、今日の潮位をグラフと時間帯別の一覧で確認するウェブアプリです。
+              満潮・干潮の目安や一日の振れ幅を見ながら、釣行などに使う目標潮位も地点ごとに残せます。
+            </p>
+            <div class="cta-row">
+              <a
+                class="button"
+                href="https://japan-tide-navi.naorex.link/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                潮位なびを開く
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+
+          <dl class="detail-facts">
+            <div>
+              <dt>地点選択</dt>
+              <dd>地域・都道府県・観測地点から絞り込む</dd>
+            </div>
+            <div>
+              <dt>一日の表示</dt>
+              <dd>グラフ、満潮・干潮、時間帯別潮位</dd>
+            </div>
+            <div>
+              <dt>個人用の目印</dt>
+              <dd>地点ごとに目標潮位とラベルを保存</dd>
+            </div>
+          </dl>
+        </header>
+
+        <figure class="workbench-overview">
+          <img
+            src="../assets/japan-tide-navi-overview.webp"
+            width="1340"
+            height="910"
+            alt="潮位なびで観測地点の選択欄、潮位グラフ、現在・満潮・干潮の概要を表示した画面"
+            decoding="async"
+            fetchpriority="high"
+          />
+          <figcaption>
+            画面例。左で観測地点を選ぶと、右側のグラフ、概要、時間帯別潮位がその地点の当日データに切り替わります。
+          </figcaption>
+        </figure>
+
+        <nav class="guide-index" aria-labelledby="guide-index-title">
+          <h2 id="guide-index-title">このページで分かること</h2>
+          <ol>
+            <li><a href="#select-station">地点の選び方</a></li>
+            <li><a href="#read-tide">表示の読み方</a></li>
+            <li><a href="#target-tide">目標潮位</a></li>
+            <li><a href="#data-notes">データと注意点</a></li>
+          </ol>
+        </nav>
+
+        <section id="select-station" class="guide-section">
+          <h2>観測地点を選ぶ</h2>
+          <p class="section-lede">
+            地域から順に絞り込む方法と、地点名で直接検索する方法があります。
+          </p>
+
+          <ol class="experiment-list">
+            <li>
+              <strong>地域を選ぶ。</strong>
+              北海道、東北、関東、中部、近畿、中国、四国、九州、沖縄から対象地域を選びます。
+            </li>
+            <li>
+              <strong>都道府県を選ぶ。</strong>
+              選んだ地域に含まれる都道府県へ候補を絞ります。
+            </li>
+            <li>
+              <strong>観測地点を選ぶ。</strong>
+              地点を切り替えると、その地点の当日データを取得して表示します。地点名が分かる場合は検索欄から探せます。
+            </li>
+          </ol>
+
+          <p class="guide-note">
+            最後に選んだ観測地点はブラウザに保存され、次回アクセスしたときにも同じ地点を開けます。
+          </p>
+        </section>
+
+        <section id="read-tide" class="guide-section">
+          <h2>グラフと数値を読む</h2>
+          <p class="section-lede">
+            一日の変化は、潮位グラフ、概要カード、時間帯別の一覧を組み合わせて確認します。
+          </p>
+
+          <dl class="parameter-list">
+            <div>
+              <dt>潮位グラフ</dt>
+              <dd>
+                0時から23時までの潮位を線でつなぎ、現在の時間帯、満潮、干潮、保存した目標潮位の位置を重ねて表示します。
+              </dd>
+            </div>
+            <div>
+              <dt>現在・満潮・干潮</dt>
+              <dd>
+                「現在の潮位」は現在時刻を含む時間帯の値です。満潮と干潮には、当日の時間帯別データの中で最も高い値と最も低い値を示します。
+              </dd>
+            </div>
+            <div>
+              <dt>今日の振れ幅</dt>
+              <dd>
+                表示している満潮の値から干潮の値を引いた差です。一日の中で潮位がどの程度動くかを見比べられます。
+              </dd>
+            </div>
+            <div>
+              <dt>時間帯別潮位</dt>
+              <dd>
+                1時間ごとの値と、時間帯の中で上昇・下降・横ばいのどの方向へ動いたかを一覧で確認できます。
+              </dd>
+            </div>
+          </dl>
+
+          <p class="guide-note">
+            画面の数値は、取得した一日の潮位系列を1時間単位で平均した要約値です。リアルタイムの実測値や、分単位の厳密な満潮・干潮時刻を示すものではありません。
+          </p>
+        </section>
+
+        <section id="target-tide" class="guide-section">
+          <h2>目標潮位を残す</h2>
+          <div class="guide-prose">
+            <p>
+              「目標潮位」に潮位と短いラベルを入力して保存すると、グラフに水平線として表示されます。
+              たとえば、過去の釣行で参考になった潮位を「釣行の目安」として残し、当日の曲線と見比べられます。
+            </p>
+            <p>
+              目標潮位は観測地点ごとに分けてブラウザ内へ保存されます。別の地点へ切り替えても設定は混ざらず、不要になった目標は「クリア」で削除できます。
+            </p>
+          </div>
+        </section>
+
+        <section id="data-notes" class="guide-section">
+          <h2>データと注意点</h2>
+          <div class="guide-prose">
+            <p>
+              潮位なびは、海上保安庁の「海しる」APIから取得した情報をもとに表示を作成しています。
+              サービスの内容は海上保安庁によって保証されたものではありません。
+            </p>
+            <p>
+              表示対象は当日分です。通信状況やデータ提供側の状態によって、観測地点や潮位データを取得できない場合があります。
+              その場合は画面の「再取得」から更新できます。
+            </p>
+            <p>
+              航行、防災、避難など安全に関わる判断には、このアプリだけを使わず、海上保安庁、気象庁、自治体などが提供する最新の公式情報も確認してください。
+            </p>
+          </div>
+
+          <div class="final-cta">
+            <div>
+              <h3>近くの観測地点を選ぶ</h3>
+              <p>
+                地域または地点名から観測地点を探し、今日の潮位の動きを確認できます。
+              </p>
+            </div>
+            <a
+              class="button"
+              href="https://japan-tide-navi.naorex.link/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              潮位なびを開く
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>&copy; <span id="year"></span> naorex.link</p>
+        <div class="footer-links">
+          <a href="../">Home</a>
+          <a href="../about.html">このサイトについて</a>
+          <a href="../privacy.html#contact">お問い合わせ</a>
+          <a href="../privacy.html">プライバシーポリシー</a>
+          <a
+            href="https://github.com/naorex"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

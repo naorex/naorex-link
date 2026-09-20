@@ -13,8 +13,11 @@
 │   └── preflight.json
 ├── CNAME
 ├── about.html
+├── assets/
+│   └── japan-tide-navi-overview.webp
 ├── blog.html
 ├── apps/
+│   ├── japan-tide-navi.html
 │   └── luck-wealth-simulator.html
 ├── docs/
 │   └── history/
@@ -29,6 +32,7 @@
 ```
 
 `about.html` はサイトの目的と運営方針、`blog.html` は `blog.naorex.link` の位置づけと案内、
+`apps/japan-tide-navi.html` は潮位なびの地点選択、表示の読み方、目標潮位、データの注意点を、
 `apps/luck-wealth-simulator.html` は公開アプリの仕組み、操作方法、結果指標、モデルの限界を説明します。
 配色、タイポグラフィ、余白などのデザイントークンは `tokens.css` で管理します。
 
@@ -126,8 +130,11 @@ https://naorex.link/ads.txt
 
 ## Privacy policy
 
-`privacy.html` は、`naorex.link` と、Luck Wealth Simulatorなど当サイトが提供するサブドメイン上のWebアプリを対象にしています。
+`privacy.html` は、`naorex.link` と、Luck Wealth Simulator、潮位なびなど当サイトが提供するサブドメイン上のWebアプリを対象にしています。
 現在および今後のGoogle AdSense利用、Cookie、Googleによるデータ利用、パーソナライズド広告、ホスティングや外部サービスによるアクセス情報について記載しています。
+
+潮位なびは、選択した観測地点と地点ごとの目標潮位・ラベルをブラウザのローカルストレージへ保存します。
+観測地点一覧をアプリのAPIから取得し、選択地点の当日潮位を取得するときには観測地点コードと対象日を送信します。
 
 問い合わせ先には、次のGoogleフォームを使用します。
 
@@ -144,9 +151,19 @@ Privacyページでフォームの提供元と入力情報の利用目的を説�
 
 `about.html` には、サイトの目的、公開するコンテンツ、運営方針、GitHubで公開する開発内容、ブログ、Privacyページに掲載する問い合わせ先への案内を記載しています。
 
+`apps/japan-tide-navi.html` は潮位なびの紹介・使い方ページです。
+地域、都道府県、地点名から観測地点を選ぶ方法、グラフと時間帯別潮位の読み方、
+地点ごとの目標潮位、海上保安庁の「海しる」APIを利用したデータの注意点を説明します。
+トップページでは潮位なびを先頭のアプリとして掲載し、アプリ本体を主導線、紹介ページを副導線として案内します。
+公開中のアプリ本体は次のURLで提供します。
+
+```text
+https://japan-tide-navi.naorex.link/
+```
+
 `apps/luck-wealth-simulator.html` は Luck Wealth Simulator の詳細解説ページです。
 操作できる条件、結果の読み方、富が偏る理由、再分配の働き、モデルが扱わない現実の要因を説明します。
-トップページではこのアプリをFeatured Appとして紹介し、詳細解説を主導線、アプリ本体を副導線として案内します。
+トップページでは潮位なびに続くアプリとして紹介し、詳細解説を主導線、アプリ本体を副導線として案内します。
 公開中のアプリ本体は次のURLで提供します。
 
 ```text

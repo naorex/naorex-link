@@ -1,5 +1,5 @@
-/* Hallmark · macrostructure: Split Studio · secondary: long-form content · genre: editorial · tone: educational · theme: Garden · enrichment: none · nav: existing site header · footer: Ft2 · contrast: pass (40–41) · slop: pass (42–45) · honest: pass (46) · chrome: pass (47) · tokens: pass (48) · responsive: pass (49) · icons: pass (30) · mobile: pass (34, 49, 50–57) */
-/* Hallmark · pre-emit critique: P5 H5 E5 S5 R5 V4 */
+/* Hallmark · macrostructure: Workbench · genre: editorial · tone: utilitarian · theme: Garden · enrichment: real product capture · nav: existing site header · footer: Ft2 */
+/* Hallmark · pre-emit critique: P5 H5 E5 S5 R5 V5 · contrast: pass (40–41) · slop: pass (42–45) · honest: pass (46) · chrome: pass (47) · tokens: pass (48) · responsive: pass (49–57) */
 @import url("./tokens.css");
 
 * {
@@ -534,6 +534,27 @@ a[aria-disabled="true"] {
 .detail-facts dd {
   margin: 0;
   color: var(--color-ink);
+}
+
+.workbench-overview {
+  margin: var(--space-xl) 0 0;
+}
+
+.workbench-overview img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: var(--rule-hairline) solid var(--color-rule);
+  border-radius: var(--radius-sm);
+  background: var(--color-paper-raised);
+}
+
+.workbench-overview figcaption {
+  max-width: 65ch;
+  margin-block-start: var(--space-sm);
+  color: var(--color-muted);
+  font-size: var(--text-sm);
+  line-height: 1.6;
 }
 
 .guide-index {
